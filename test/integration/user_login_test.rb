@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class UserLoginTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
-
   test 'user can login' do
     user = User.create(username: "Jamie", password: "password")
 
@@ -12,8 +10,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     click_button "Login"
 
     assert page.has_content?("Welcome Jamie!")
-
-    reset_session!
   end
 end
 
