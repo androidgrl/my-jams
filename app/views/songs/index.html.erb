@@ -1,0 +1,8 @@
+<h1>My Favorite Songs</h1>
+<% @songs.each do |song| %>
+  <%#= song.title %>
+  <%= link_to song.title, song %>
+  <%= link_to "Edit", edit_song_path(song) %>
+  <%= link_to "Delete", song_path(song), method: :delete %><br>
+<% end %>
+<%= link_to "Add a Song", new_song_path %>
